@@ -2,7 +2,7 @@ Installation
 --------------
 First clone the repository with
 ```bash
-git clone https://github.com/kthr/Eidomatica.git Eidomatica
+git clone https://github.com/kthr/Eidomatica.git
 ```
 Then create a directory "build" inside the cloned repository
 ```bash
