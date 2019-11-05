@@ -16,3 +16,7 @@ with
 cmake ..
 make install
 ```
+
+Additional information
+--------------
+In order to use all functionality of this package you should consider installing [libEidomatica](https://github.com/kthr/libEidomatica). This library implements a some algorithms in C++ and makes them available to Mathematica.
