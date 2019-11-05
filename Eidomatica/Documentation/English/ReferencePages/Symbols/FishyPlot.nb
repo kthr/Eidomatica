@@ -1,0 +1,1202 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     37410,       1192]
+NotebookOptionsPosition[     30710,       1000]
+NotebookOutlinePosition[     31341,       1025]
+CellTagsIndexPosition[     31261,       1020]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["XX", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Eidomatica Package", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1698414158],
+
+Cell["Eidomatica`ZebrafishAnalysis`", "Categorization",
+ CellLabel->"Context",
+ CellID->894117582],
+
+Cell["Eidomatica/ref/FishyPlot", "Categorization",
+ CellLabel->"URI",
+ CellID->1491122615]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["FishyPlot", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ "FishyPlot[tracks]",
+ "\[LineSeparator]plots the tracks."
+}], "Usage"],
+
+Cell["The following options can be given: ", "Notes"],
+
+Cell[BoxData[GridBox[{
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["AlignmentPoint",
+     BaseStyle->"Link"], 
+    ButtonBox["Center",
+     BaseStyle->"Link"], Cell["\<\
+AlignmentPoint is an option which specifies how objects should by default be \
+aligned when they appear in Inset.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["AspectRatio",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+AspectRatio is an option for Graphics and related functions that specifies \
+the ratio of height to width for a plot. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Axes",
+     BaseStyle->"Link"], 
+    ButtonBox["False",
+     BaseStyle->"Link"], Cell["\<\
+Axes is an option for graphics functions that specifies whether axes should \
+be drawn. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["AxesLabel",
+     BaseStyle->"Link"], 
+    ButtonBox["None",
+     BaseStyle->"Link"], Cell["\<\
+AxesLabel is an option for graphics functions that specifies labels for axes. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["AxesOrigin",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+AxesOrigin is an option for graphics functions that specifies where any axes \
+drawn should cross. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["AxesStyle",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+AxesStyle is an option for graphics functions that specifies how axes should \
+be rendered. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Background",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+Background is an option that specifies what background color to use. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Background",
+     BaseStyle->"Link"], 
+    ButtonBox["None",
+     BaseStyle->"Link"], Cell["\<\
+Background is an option that specifies what background color to use. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["BaselinePosition",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+BaselinePosition is an option that specifies where the baseline of an object \
+is considered to be for purposes of alignment with surrounding text or other \
+expressions. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["BaseStyle",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+BaseStyle is an option for formatting and related constructs that specifies \
+the base style to use for them. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ClipAtStartEnd",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/ClipAtStartEnd"], 
+    ButtonBox["False",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["ClipAtStartEnd",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ClipAtStartEnd"]], "InlineFormula"],
+     
+     " ??"
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ColorOutput",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+ColorOutput is an option for graphics functions that specifies the type of \
+color output to produce. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ContentSelectable",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+ContentSelectable is an option to constructs such as Inset, Graphics, and \
+GraphicsGroup that specifies whether and how content within them should be \
+selectable. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["CoordinatesToolOptions",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell[TextData[{
+     "CoordinatesToolOptions",
+     " is an option for ",
+     "Graphics",
+     " that gives values of options associated with the ",
+     Cell[BoxData[
+      StyleBox[
+       RowBox[{"Get", " ", "Coordinates"}], "MenuName"]], "InlineFormula"],
+     " ",
+     "tool."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Dimension",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Dimension"], 
+    RowBox[{"{", 
+     RowBox[{"1000", ",", " ", "1000"}], "}"}], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["Dimension",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Dimension"]], "InlineFormula"],
+     " defines the dimensions of the original image, where the coordinates \
+where computed from."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Epilog",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+Epilog is an option for graphics functions that gives a list of graphics \
+primitives to be rendered after the main part of the graphics is rendered. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Feature",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Feature"], "Time", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["Feature",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Feature"]], "InlineFormula"],
+     " is an option for FishyPlot[]."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Frame",
+     BaseStyle->"Link"], 
+    ButtonBox["False",
+     BaseStyle->"Link"], Cell["\<\
+Frame is an option for Graphics, Grid, and other constructs that specifies \
+whether to include a frame. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["FrameLabel",
+     BaseStyle->"Link"], 
+    ButtonBox["None",
+     BaseStyle->"Link"], Cell["\<\
+FrameLabel is an option for Graphics, Manipulate, and related functions that \
+specifies labels to be placed on the edges of a frame. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["FrameStyle",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+FrameStyle is an option for Graphics, Grid, and other constructs that \
+specifies the style in which to draw frames.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["FrameTicks",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+FrameTicks is an option for 2D graphics functions that specifies tick marks \
+for the edges of a frame. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["FrameTicksStyle",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+FrameTicksStyle is an option for 2D graphics functions that specifies how \
+frame ticks should be rendered.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["From",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/From"], "Start", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["From",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/From"]], "InlineFormula"],
+     " option for ",
+     Cell[BoxData[
+      ButtonBox["eSelectTracks",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/eSelectTracks"]], "InlineFormula"],
+     ", if set to an specific number only tracks from this timepoint are \
+returned."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["GlobalBounds",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/GlobalBounds"], 
+    ButtonBox["True",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["GlobalBounds",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/GlobalBounds"]], "InlineFormula"],
+     " is an option for FishyPlot[]."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["GridLines",
+     BaseStyle->"Link"], 
+    ButtonBox["None",
+     BaseStyle->"Link"], Cell["\<\
+GridLines is an option for two-dimensional graphics functions that specifies \
+grid lines. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["GridLinesStyle",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+GridLinesStyle is an option for 2D graphics functions that specifies how grid \
+lines should be rendered.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ImageMargins",
+     BaseStyle->"Link"], "0.", Cell["\<\
+ImageMargins is an option that specifies the absolute margins to leave around \
+the image displayed for an object. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ImagePadding",
+     BaseStyle->"Link"], 
+    ButtonBox["All",
+     BaseStyle->"Link"], Cell["\<\
+ImagePadding is an option for graphics functions that specifies what absolute \
+extra padding should be left for extended objects such as thick lines and \
+annotations such as tick and axis labels.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ImageSize",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+ImageSize is an option that specifies the overall size of an image to display \
+for an object. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ImageSizeRaw",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["XXXX", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["LabelStyle",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+LabelStyle is an option for formatting and related constructs that specifies \
+the style to use in displaying their label-like elements. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["LateralProjectionRange",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/LateralProjectionRange"], 
+    RowBox[{
+     RowBox[{"17", " ", "Pi"}], "\n", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"-", "\n", " ", "18"}]}]}]}], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["LateralProjectionRange",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/LateralProjectionRange"]], 
+      "InlineFormula"],
+     " is the projection range of the Mercator projection."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["LineThickness",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/LineThickness"], "0.005", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["LineThickness",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/LineThickness"]], "InlineFormula"],
+     " is an option for FishyPlot[]."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["LowerQuantile",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/LowerQuantile"], "0", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["LowerQuantile",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/LowerQuantile"]], "InlineFormula"],
+     " is an option for FishyPlot[]."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["MaximalDisplacement",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/MaximalDisplacement"], "35", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["MaximalDisplacement",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/MaximalDisplacement"]], 
+      "InlineFormula"],
+     " option for ",
+     Cell[BoxData[
+      ButtonBox["eSelectTracks",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/eSelectTracks"]], "InlineFormula"],
+     ", if set to an specific number only tracks with jumbs between \
+timepoints smaller than this number are returned."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Method",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+Method is an option for various algorithm-intensive functions that specifies \
+what internal methods they should use.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["MinimalLength",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/MinimalLength"], "20", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["MinimalLength",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/MinimalLength"]], "InlineFormula"],
+     " option for ",
+     Cell[BoxData[
+      ButtonBox["eSelectTracks",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/eSelectTracks"]], "InlineFormula"],
+     ", if set to an specific number only tracks longer than this number are \
+returned."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["MinMax",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/MinMax"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["MinMax",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/MinMax"]], "InlineFormula"],
+     " is an option for FishyPlot[]."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["MovingAverageBlockLength",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/MovingAverageBlockLength"], "5", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["MovingAverageBlockLength",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/MovingAverageBlockLength"]], 
+      "InlineFormula"],
+     " is an option for FishyPlot[]."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["PlotLabel",
+     BaseStyle->"Link"], 
+    ButtonBox["None",
+     BaseStyle->"Link"], Cell["\<\
+PlotLabel is an option for graphics functions that specifies an overall label \
+for a plot. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["PlotRange",
+     BaseStyle->"Link"], 
+    ButtonBox["All",
+     BaseStyle->"Link"], Cell["\<\
+PlotRange is an option for graphics functions that specifies what range of \
+coordinates to include in a plot. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["PlotRangeClipping",
+     BaseStyle->"Link"], 
+    ButtonBox["False",
+     BaseStyle->"Link"], Cell["\<\
+PlotRangeClipping is an option for graphics functions that specifies whether \
+graphics objects should be clipped at the edge of the region defined by \
+PlotRange, or should be allowed to extend to the actual edge of the image. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["PlotRangePadding",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+PlotRangePadding is an option for graphics functions that specifies how much \
+further axes etc. should extend beyond the range of coordinates specified by \
+PlotRange. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["PlotRegion",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+PlotRegion is an option for graphics functions that specifies what region of \
+the final display area a plot should fill. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["PreserveImageOptions",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+PreserveImageOptions is an option to graphics and related functions that \
+specifies whether image size and certain other options should be preserved \
+from the previous version of a graphic if the graphic is replaced by a new \
+one in output.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Prolog",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+Prolog is an option for graphics functions which gives a list of graphics \
+primitives to be rendered before the main part of the graphics is rendered. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Radius",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Radius"], "100", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["Radius",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Radius"]], "InlineFormula"],
+     " is an option for ",
+     Cell[BoxData[
+      ButtonBox["ToPolar",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ToPolar"]], "InlineFormula"],
+     " specifying the radius of the computed polar coordinates.\nRadius is an \
+option for eSteinbrueckerOpticalFlow[] specifying the search radius (in \
+pixels) of the complete search."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["RotateLabel",
+     BaseStyle->"Link"], 
+    ButtonBox["True",
+     BaseStyle->"Link"], Cell["\<\
+RotateLabel is an option for graphics and related functions that specifies \
+whether labels on vertical frame axes should be rotated to be vertical. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Scheme",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Scheme"], "TemperatureMap", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["Scheme",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Scheme"]], "InlineFormula"],
+     " is an option for FishyPlot[]."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Ticks",
+     BaseStyle->"Link"], 
+    ButtonBox["Automatic",
+     BaseStyle->"Link"], Cell["\<\
+Ticks is an option for graphics functions that specifies tick marks for axes. \
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["TicksStyle",
+     BaseStyle->"Link"], 
+    RowBox[{"{", "}"}], Cell["\<\
+TicksStyle is an option for graphics functions which specifies how ticks \
+should be rendered.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["To",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/To"], 
+    ButtonBox["End",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["To",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/To"]], "InlineFormula"],
+     " option for ",
+     Cell[BoxData[
+      ButtonBox["eSelectTracks",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/eSelectTracks"]], "InlineFormula"],
+     ", if set to an specific number only tracks until this timepoint are \
+returned."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["UpperQuantile",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/UpperQuantile"], "1", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["UpperQuantile",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/UpperQuantile"]], "InlineFormula"],
+     " is an option for FishyPlot[]."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["DisplayFunction",
+     BaseStyle->"Link"], 
+    ButtonBox["$DisplayFunction",
+     BaseStyle->"Link"], Cell["\<\
+DisplayFunction is an option for graphics and sound functions that specifies \
+a function to apply to graphics and sound objects before returning them.\
+\>", "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["FormatType",
+     BaseStyle->"Link"], 
+    ButtonBox["TraditionalForm",
+     BaseStyle->"Link"], Cell["\<\
+FormatType is an option for output streams, graphics, and functions such as \
+Text that specifies the default format type to use when outputting \
+expressions. \
+\>", "TableText"]}
+  }]], "3ColumnTableMod"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["AlignmentPoint", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["AspectRatio", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Axes", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["AxesLabel", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["AxesOrigin", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["AxesStyle", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Background", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Background", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["BaselinePosition", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["BaseStyle", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ClipAtStartEnd", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ColorOutput", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ContentSelectable", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["CoordinatesToolOptions", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Dimension", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Epilog", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Feature", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Frame", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["FrameLabel", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["FrameStyle", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["FrameTicks", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["FrameTicksStyle", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["From", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["GlobalBounds", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["GridLines", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["GridLinesStyle", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ImageMargins", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ImagePadding", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ImageSize", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ImageSizeRaw", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["LabelStyle", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["LateralProjectionRange", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["LineThickness", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["LowerQuantile", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["MaximalDisplacement", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Method", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["MinimalLength", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["MinMax", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["MovingAverageBlockLength", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["PlotLabel", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["PlotRange", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["PlotRangeClipping", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["PlotRangePadding", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["PlotRegion", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["PreserveImageOptions", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Prolog", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Radius", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["RotateLabel", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scheme", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Ticks", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["TicksStyle", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["To", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["UpperQuantile", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["DisplayFunction", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["FormatType", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"]
+}, Closed]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+CellContext->"Global`",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[22924, 733, 100, 2, 55, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 31122, 1013}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 324, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[906, 38, 68, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[977, 41, 79, 2, 30, "Categorization",
+ CellID->686433507],
+Cell[1059, 45, 92, 2, 30, "Categorization",
+ CellID->1698414158],
+Cell[1154, 49, 98, 2, 30, "Categorization",
+ CellID->894117582],
+Cell[1255, 53, 90, 2, 30, "Categorization",
+ CellID->1491122615]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1382, 60, 55, 1, 19, "KeywordsSection",
+ CellID->477174294],
+Cell[1440, 63, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1522, 69, 65, 1, 19, "TemplatesSection",
+ CellID->1872225408],
+Cell[1590, 72, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1687, 76, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1772, 80, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1856, 84, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1975, 91, 53, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[2031, 94, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2097, 98, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2169, 102, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2236, 106, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2308, 110, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2372, 114, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2436, 118, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2502, 122, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2583, 126, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2687, 133, 52, 1, 63, "ObjectName",
+ CellID->1224892054],
+Cell[2742, 136, 112, 4, 73, "Usage"],
+Cell[2857, 142, 53, 0, 25, "Notes"],
+Cell[2913, 144, 18857, 526, 2631, "3ColumnTableMod"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21807, 675, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[21867, 678, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21949, 684, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[22035, 687, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22130, 693, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[22198, 696, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22284, 702, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[22342, 705, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22422, 711, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[22482, 714, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[22543, 718, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[22924, 733, 100, 2, 55, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[23027, 737, 125, 3, 33, "ExampleSection",
+ CellID->1293636265],
+Cell[23155, 742, 148, 3, 21, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[23328, 749, 106, 2, 21, "ExampleSection"],
+Cell[23437, 753, 119, 2, 70, "ExampleSubsection"],
+Cell[23559, 757, 116, 2, 70, "ExampleSubsection"],
+Cell[23678, 761, 109, 2, 70, "ExampleSubsection"],
+Cell[23790, 765, 114, 2, 70, "ExampleSubsection"],
+Cell[23907, 769, 115, 2, 70, "ExampleSubsection"],
+Cell[24025, 773, 114, 2, 70, "ExampleSubsection"],
+Cell[24142, 777, 115, 2, 70, "ExampleSubsection"],
+Cell[24260, 781, 115, 2, 70, "ExampleSubsection"],
+Cell[24378, 785, 121, 2, 70, "ExampleSubsection"],
+Cell[24502, 789, 114, 2, 70, "ExampleSubsection"],
+Cell[24619, 793, 119, 2, 70, "ExampleSubsection"],
+Cell[24741, 797, 116, 2, 70, "ExampleSubsection"],
+Cell[24860, 801, 122, 2, 70, "ExampleSubsection"],
+Cell[24985, 805, 127, 2, 70, "ExampleSubsection"],
+Cell[25115, 809, 114, 2, 70, "ExampleSubsection"],
+Cell[25232, 813, 111, 2, 70, "ExampleSubsection"],
+Cell[25346, 817, 112, 2, 70, "ExampleSubsection"],
+Cell[25461, 821, 110, 2, 70, "ExampleSubsection"],
+Cell[25574, 825, 115, 2, 70, "ExampleSubsection"],
+Cell[25692, 829, 115, 2, 70, "ExampleSubsection"],
+Cell[25810, 833, 115, 2, 70, "ExampleSubsection"],
+Cell[25928, 837, 120, 2, 70, "ExampleSubsection"],
+Cell[26051, 841, 109, 2, 70, "ExampleSubsection"],
+Cell[26163, 845, 117, 2, 70, "ExampleSubsection"],
+Cell[26283, 849, 114, 2, 70, "ExampleSubsection"],
+Cell[26400, 853, 119, 2, 70, "ExampleSubsection"],
+Cell[26522, 857, 117, 2, 70, "ExampleSubsection"],
+Cell[26642, 861, 117, 2, 70, "ExampleSubsection"],
+Cell[26762, 865, 114, 2, 70, "ExampleSubsection"],
+Cell[26879, 869, 117, 2, 70, "ExampleSubsection"],
+Cell[26999, 873, 115, 2, 70, "ExampleSubsection"],
+Cell[27117, 877, 127, 2, 70, "ExampleSubsection"],
+Cell[27247, 881, 118, 2, 70, "ExampleSubsection"],
+Cell[27368, 885, 118, 2, 70, "ExampleSubsection"],
+Cell[27489, 889, 124, 2, 70, "ExampleSubsection"],
+Cell[27616, 893, 111, 2, 70, "ExampleSubsection"],
+Cell[27730, 897, 118, 2, 70, "ExampleSubsection"],
+Cell[27851, 901, 111, 2, 70, "ExampleSubsection"],
+Cell[27965, 905, 129, 2, 70, "ExampleSubsection"],
+Cell[28097, 909, 114, 2, 70, "ExampleSubsection"],
+Cell[28214, 913, 114, 2, 70, "ExampleSubsection"],
+Cell[28331, 917, 122, 2, 70, "ExampleSubsection"],
+Cell[28456, 921, 121, 2, 70, "ExampleSubsection"],
+Cell[28580, 925, 115, 2, 70, "ExampleSubsection"],
+Cell[28698, 929, 125, 2, 70, "ExampleSubsection"],
+Cell[28826, 933, 111, 2, 70, "ExampleSubsection"],
+Cell[28940, 937, 111, 2, 70, "ExampleSubsection"],
+Cell[29054, 941, 116, 2, 70, "ExampleSubsection"],
+Cell[29173, 945, 111, 2, 70, "ExampleSubsection"],
+Cell[29287, 949, 110, 2, 70, "ExampleSubsection"],
+Cell[29400, 953, 115, 2, 70, "ExampleSubsection"],
+Cell[29518, 957, 107, 2, 70, "ExampleSubsection"],
+Cell[29628, 961, 118, 2, 70, "ExampleSubsection"],
+Cell[29749, 965, 120, 2, 70, "ExampleSubsection"],
+Cell[29872, 969, 115, 2, 70, "ExampleSubsection"]
+}, Closed]],
+Cell[30002, 974, 131, 3, 21, "ExampleSection",
+ CellID->258228157],
+Cell[30136, 979, 142, 3, 21, "ExampleSection",
+ CellID->2123667759],
+Cell[30281, 984, 135, 3, 21, "ExampleSection",
+ CellID->1305812373],
+Cell[30419, 989, 140, 3, 21, "ExampleSection",
+ CellID->1653164318],
+Cell[30562, 994, 132, 3, 21, "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

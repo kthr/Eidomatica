@@ -1,0 +1,620 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     17320,        610]
+NotebookOptionsPosition[     12826,        461]
+NotebookOutlinePosition[     13456,        486]
+CellTagsIndexPosition[     13377,        481]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["XX", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Eidomatica Package", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1902529807],
+
+Cell["Eidomatica`Tracking`", "Categorization",
+ CellLabel->"Context",
+ CellID->1934446066],
+
+Cell["Eidomatica/ref/eFluidTracking", "Categorization",
+ CellLabel->"URI",
+ CellID->1480099329]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["eFluidTracking", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ "eFluidTracking[binaryImagePath, flowFieldPath, exportPath]",
+ "\[LineSeparator]compute fluid tracks over all images."
+}], "Usage"],
+
+Cell["The following options can be given: ", "Notes"],
+
+Cell[BoxData[GridBox[{
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["AbortWhenOverride",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/AbortWhenOverride"], 
+    ButtonBox["True",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["AbortWhenOverride",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/AbortWhenOverride"]], 
+      "InlineFormula"],
+     " if TRUE the function given this option aborts when file would be \
+overriden."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["BoundaryCondition",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/BoundaryCondition"], "Fixed", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["BoundaryCondition",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/BoundaryCondition"]], 
+      "InlineFormula"],
+     " is an option for eDisplaceByVectorField[] (either 'Fixed' or \
+'Periodic'). When 'Fixed' displacements outside the image domain are \
+cropped."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ConstraintType",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/ConstraintType"], "Standard", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["ConstraintType",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ConstraintType"]], "InlineFormula"],
+     
+     " set the type of the contraint function to either 'Standard' where the \
+size constraint is equal at every image position or to 'Mercator' where the \
+size is adjusted according to distortion in the Mercator projection."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["FileNameDivision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/FileNameDivision"], 
+    RowBox[{".", 
+     RowBox[{"/", 
+      RowBox[{"divisions", ".", "m"}]}]}], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["FileNameDivision",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/FileNameDivision"]], 
+      "InlineFormula"],
+     " the file name for the file where the divisions are saved in."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["IncludeAppearingCells",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/IncludeAppearingCells"], 
+    ButtonBox["True",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["IncludeAppearingCells",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/IncludeAppearingCells"]], 
+      "InlineFormula"],
+     " if ",
+     "True",
+     " than appearing objects are included in the tracking process."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["InitialLabelMatrix",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/InitialLabelMatrix"], 
+    ButtonBox["None",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["InitialLabelMatrix",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/InitialLabelMatrix"]], 
+      "InlineFormula"],
+     " uses the given intial label matrix instead of the first binary image."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Interpolated",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Interpolated"], 
+    ButtonBox["False",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["Interpolated",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Interpolated"]], "InlineFormula"],
+     " is an option for eDisplaceByVectorField[] (either 'True' or 'False'). ",
+     "If",
+     " 'True' displacement is interpolated."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["LabelSize",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/LabelSize"], 
+    RowBox[{"32", "Bit"}], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["LabelSize",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/LabelSize"]], "InlineFormula"],
+     " defines the label size, which is either \"32Bit\" or \"64Bit\"."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["MaximalSize",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/MaximalSize"], "500", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["MaximalSize",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/MaximalSize"]], "InlineFormula"],
+     " is an option setting the upper bound for the size constraint on the \
+mercator projection."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Overlap",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Overlap"], "0.5", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["Overlap",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Overlap"]], "InlineFormula"],
+     " the overlap constraint (percentage of overlap)."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ReturnType",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/ReturnType"], 
+    ButtonBox["Image",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["ReturnType",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ReturnType"]], "InlineFormula"],
+     " is an option for eDisplaceByVectorField[] and CreateMask[] which \
+specifies if the return type is an image or a matrix, possible values are \
+\"Matrix\" or \"Image\"."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["SizeConstraint",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/SizeConstraint"], 
+    ButtonBox["None",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["SizeConstraint",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/SizeConstraint"]], "InlineFormula"],
+     
+     " is an option for eDeleteObjects[], eCreateMetaData[], eRelabel[] and \
+eFluidTracking[] deleting all objects smaller than the given size."
+    }], "TableText"]}
+  }]], "3ColumnTableMod"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["AbortWhenOverride", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["BoundaryCondition", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ConstraintType", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["FileNameDivision", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["IncludeAppearingCells", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["InitialLabelMatrix", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interpolated", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["LabelSize", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["MaximalSize", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Overlap", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ReturnType", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["SizeConstraint", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"]
+}, Closed]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+CellContext->"Global`",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[10131, 366, 100, 2, 55, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 13238, 474}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 324, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[906, 38, 68, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[977, 41, 79, 2, 30, "Categorization",
+ CellID->686433507],
+Cell[1059, 45, 92, 2, 30, "Categorization",
+ CellID->1902529807],
+Cell[1154, 49, 90, 2, 30, "Categorization",
+ CellID->1934446066],
+Cell[1247, 53, 95, 2, 30, "Categorization",
+ CellID->1480099329]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1379, 60, 55, 1, 19, "KeywordsSection",
+ CellID->477174294],
+Cell[1437, 63, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1519, 69, 65, 1, 19, "TemplatesSection",
+ CellID->1872225408],
+Cell[1587, 72, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1684, 76, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1769, 80, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1853, 84, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1972, 91, 53, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[2028, 94, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2094, 98, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2166, 102, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2233, 106, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2305, 110, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2369, 114, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2433, 118, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2499, 122, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2580, 126, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2684, 133, 57, 1, 63, "ObjectName",
+ CellID->1224892054],
+Cell[2744, 136, 173, 4, 73, "Usage"],
+Cell[2920, 142, 53, 0, 25, "Notes"],
+Cell[2976, 144, 6001, 159, 673, "3ColumnTableMod"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9014, 308, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[9074, 311, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9156, 317, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[9242, 320, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9337, 326, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[9405, 329, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9491, 335, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[9549, 338, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9629, 344, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[9689, 347, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[9750, 351, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[10131, 366, 100, 2, 55, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[10234, 370, 125, 3, 33, "ExampleSection",
+ CellID->1293636265],
+Cell[10362, 375, 148, 3, 21, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[10535, 382, 106, 2, 21, "ExampleSection"],
+Cell[10644, 386, 122, 2, 70, "ExampleSubsection"],
+Cell[10769, 390, 122, 2, 70, "ExampleSubsection"],
+Cell[10894, 394, 119, 2, 70, "ExampleSubsection"],
+Cell[11016, 398, 121, 2, 70, "ExampleSubsection"],
+Cell[11140, 402, 126, 2, 70, "ExampleSubsection"],
+Cell[11269, 406, 123, 2, 70, "ExampleSubsection"],
+Cell[11395, 410, 117, 2, 70, "ExampleSubsection"],
+Cell[11515, 414, 114, 2, 70, "ExampleSubsection"],
+Cell[11632, 418, 116, 2, 70, "ExampleSubsection"],
+Cell[11751, 422, 112, 2, 70, "ExampleSubsection"],
+Cell[11866, 426, 115, 2, 70, "ExampleSubsection"],
+Cell[11984, 430, 119, 2, 70, "ExampleSubsection"]
+}, Closed]],
+Cell[12118, 435, 131, 3, 21, "ExampleSection",
+ CellID->258228157],
+Cell[12252, 440, 142, 3, 21, "ExampleSection",
+ CellID->2123667759],
+Cell[12397, 445, 135, 3, 21, "ExampleSection",
+ CellID->1305812373],
+Cell[12535, 450, 140, 3, 21, "ExampleSection",
+ CellID->1653164318],
+Cell[12678, 455, 132, 3, 21, "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

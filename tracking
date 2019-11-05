@@ -1,0 +1,75 @@
+#!/usr/bin/env python2.7
+
+import argparse
+from time import strftime, localtime
+import os
+import subprocess
+import sys
+import shutil
+
+try:
+	parser=argparse.ArgumentParser(description='Fluid tracking script which creates tracking information and puts all necessary results in an archive.')
+	parser.add_argument('-o', metavar='NUM', default=.6, type=float, help='The overlap parameter (default=.6).')
+	parser.add_argument('-min', metavar='NUM', default=30, type=int, help='The size constraint parameter for the minimal object size (default=30). For no minimal size constraint put in 0.')
+	parser.add_argument('-max', metavar='NUM', default=0, type=int, help='The size constraint parameter for the minimal object size (default=0). For no maximal size constraint put in 0.')
+	parser.add_argument('--constraint-type', default='Standard', type=str, help='The type of size constraint (default="Standard"), possible values are "Standard" and "Mercator"')
+	parser.add_argument('--interpolated', default=False, action='store_true', help='For the displacement by the vector fields an interpolated is used (default=False).')
+	parser.add_argument('--boundary-condition', default='Fixed', type=str, help='The type of the boundary condition (default="Fixed"), possible values are "Fixed" and "Periodic"')
+	parser.add_argument('-bd', '--base-directory', default='Automatic', type=str, help='Specifies the location where all tracking data is saved (default="Automatic").')
+	parser.add_argument('--unpacked', default=False, action='store_true', help='Tracking data is not packed into an archive, instead it is saved into the BASE_DIRECTORY.')
+	parser.add_argument('-iac','--include-appearing-cells', default=False, action='store_true', help='If flag is set new cells will be included in tracking (default=False).')
+	parser.add_argument('-p','--postfix',default='tracking',help='Specifies the postfix appended to the name of the experiment for identification (default="tracking").')
+	parser.add_argument('-i','--initial-label-matrix',default='None',type=str,help='The initial label matrix used for tracking. This should be a .mat file with labeled objects.')
+	parser.add_argument('-e','--emb-export', default=False, action='store_true',help='If set csv files are created and saved for colaboration with Tim.')
+	parser.add_argument('image_directory', type=str)
+	parser.add_argument('flow_directory', type=str, nargs='?', default='')
+
+	args= parser.parse_args()
+
+	process=subprocess.Popen(['which','tracking-script.m'],stdout=subprocess.PIPE)
+	process.wait()
+	pathToTrackingScript=process.stdout.read().strip()
+
+	time=strftime("%Y-%m-%d-%H_%M_%S",localtime())
+	project_name=time + '-' + args.postfix
+	if (args.base_directory == 'Automatic'):
+		base_directory=os.path.join(os.path.abspath(os.path.curdir), project_name)
+		print 'creating directory ' + base_directory + '...'
+		os.makedirs(os.path.join(base_directory,'label'))
+	else:
+		if (not os.path.exists(args.base_directory)):
+			base_directory=args.base_directory
+			print 'creating directory ' + base_directory + '...'
+			os.makedirs(os.path.join(base_directory,'label'))
+		else:
+			base_directory=args.base_directory
+	if args.min==0:
+		min='None'
+	else:
+		min=str(args.min)
+	if args.max==0:
+		max='None'
+	else:
+		max=str(args.max)
+
+	process=subprocess.Popen([pathToTrackingScript, args.image_directory, args.flow_directory, base_directory, min, max, str(args.o), str(args.interpolated), args.constraint_type, args.boundary_condition, str(args.include_appearing_cells), args.initial_label_matrix, str(args.emb_export), str(time)])
+	process.wait()
+
+	if(process.returncode == 0):
+		if not args.unpacked:
+			print 'creating tar archive ' + base_directory + '.tar.gz...'
+			if args.emb_export:
+				process=subprocess.Popen(['tar', 'cfz', project_name + '.tar.gz', '-C', base_directory, 'label', 'divisions.m', 'tracks.m', time + '-tracking.log', 'divisions.csv', 'tracks.csv'])
+				process.wait()
+			else:
+				process=subprocess.Popen(['tar', 'cfz', project_name + '.tar.gz', '-C', base_directory, 'label', 'divisions.m', 'tracks.m', time + '-tracking.log'])
+				process.wait()
+			print 'deleting base directory...'
+			shutil.rmtree(base_directory)
+			
+except (KeyboardInterrupt):
+	if(vars().has_key('process')):
+		process.kill()
+	if(os.path.exists(base_directory)):
+		print 'deleting base directory...'
+		shutil.rmtree(base_directory)

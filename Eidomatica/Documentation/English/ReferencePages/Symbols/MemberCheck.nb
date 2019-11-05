@@ -1,0 +1,253 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5790,        243]
+NotebookOptionsPosition[      3210,        157]
+NotebookOutlinePosition[      3588,        174]
+CellTagsIndexPosition[      3545,        171]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["XX", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellID->686433507],
+
+Cell["Eidomatica Package", "Categorization"],
+
+Cell["Global`", "Categorization"],
+
+Cell["Eidomatica/ref/MemberCheck", "Categorization"],
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360],
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellID->793782254],
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellID->240026365],
+
+Cell[CellGroupData[{
+
+Cell["MemberCheck", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ "Global`MemberCheck"
+}], "usage"],
+
+Cell["Usage", "Input"],
+
+Cell[BoxData["Open"], "Input"],
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938],
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860],
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239],
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353],
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151]
+}, Cell["XXXX", "Notes", CellID -> 1067943069]]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+CellContext->"Global`",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 324, 14, 20, "History",
+ CellID->1247902091],
+Cell[884, 36, 68, 1, 20, "CategorizationSection",
+ CellID->1122911449],
+Cell[955, 39, 52, 1, 31, "Categorization",
+ CellID->686433507],
+Cell[1010, 42, 44, 0, 31, "Categorization"],
+Cell[1057, 44, 33, 0, 31, "Categorization"],
+Cell[1093, 46, 52, 0, 31, "Categorization"],
+Cell[1148, 48, 55, 1, 20, "KeywordsSection",
+ CellID->477174294],
+Cell[1206, 51, 45, 1, 20, "Keywords",
+ CellID->1164421360],
+Cell[1254, 54, 65, 1, 20, "TemplatesSection",
+ CellID->1872225408],
+Cell[1322, 57, 50, 1, 32, "Template",
+ CellID->1562036412],
+Cell[1375, 60, 49, 1, 32, "Template",
+ CellID->158391909],
+Cell[1427, 63, 50, 1, 32, "Template",
+ CellID->1360575930],
+Cell[1480, 66, 49, 1, 32, "Template",
+ CellID->793782254],
+Cell[1532, 69, 53, 1, 20, "DetailsSection",
+ CellID->307771771],
+Cell[1588, 72, 43, 1, 31, "Details",
+ CellID->670882175],
+Cell[1634, 75, 43, 1, 31, "Details",
+ CellID->350963985],
+Cell[1680, 78, 41, 1, 31, "Details",
+ CellID->8391405],
+Cell[1724, 81, 41, 1, 31, "Details",
+ CellID->3610269],
+Cell[1768, 84, 43, 1, 31, "Details",
+ CellID->401364205],
+Cell[1814, 87, 43, 1, 31, "Details",
+ CellID->350204745],
+Cell[1860, 90, 43, 1, 31, "Details",
+ CellID->732958810],
+Cell[1906, 93, 43, 1, 31, "Details",
+ CellID->222905350],
+Cell[1952, 96, 43, 1, 31, "Details",
+ CellID->240026365],
+Cell[CellGroupData[{
+Cell[2020, 101, 54, 1, 53, "ObjectName",
+ CellID->1224892054],
+Cell[2077, 104, 75, 3, 70, "usage"],
+Cell[2155, 109, 22, 0, 70, "Input"],
+Cell[2180, 111, 30, 0, 22, "Input"],
+Cell[2213, 113, 57, 1, 20, "TutorialsSection",
+ CellID->250839057],
+Cell[2273, 116, 45, 1, 20, "Tutorials",
+ CellID->341631938],
+Cell[2321, 119, 83, 1, 20, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[2407, 122, 58, 1, 20, "RelatedDemonstrations",
+ CellID->1129518860],
+Cell[2468, 125, 65, 1, 20, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[2536, 128, 49, 1, 20, "RelatedLinks",
+ CellID->1038487239],
+Cell[2588, 131, 55, 1, 20, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[2646, 134, 43, 1, 20, "SeeAlso",
+ CellID->929782353],
+Cell[2692, 137, 57, 1, 20, "MoreAboutSection",
+ CellID->38303248],
+Cell[2752, 140, 46, 1, 20, "MoreAbout",
+ CellID->1665078683],
+Cell[2801, 143, 356, 11, 30, "PrimaryExamplesSection",
+ CellID->880084151]
+}, Cell["XXXX", "Notes", CellID -> 1067943069]]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
