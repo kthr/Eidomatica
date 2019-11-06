@@ -10,7 +10,7 @@ cd Eidomatica
 mkdir build
 cd build
 ```
-Finally install the library to your local Mathematica applications directory 
+Finally install the package to your local Mathematica applications directory 
 with
 ```bash
 cmake ..
